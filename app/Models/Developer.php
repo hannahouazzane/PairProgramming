@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Developer extends Model
+
 {
     /** @use HasFactory<\Database\Factories\DeveloperFactory> */
     use HasFactory;
-    protected $fillable = ['name', 'level', 'interests'];
+    protected $fillable = ['name', 'level', 'interests', 'profession'];
+    protected $casts = [
+        'interests' => 'array',
+    ];
 
 }
